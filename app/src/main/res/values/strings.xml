@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Nelson Comments</string>
+    <string name="refresh">refresh</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+</resources>

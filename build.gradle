@@ -1,0 +1,97 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = "1.3.72"
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.0.2"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    ext {
+
+        androidLibs = [
+                appcompat           : 'androidx.appcompat:appcompat:1.1.0',
+                recyclerview        : 'androidx.recyclerview:recyclerview:1.1.0',
+                constraintlayout    : 'androidx.constraintlayout:constraintlayout:1.1.3',
+                androidxCore        : 'androidx.core:core-ktx:1.2.0',
+                playServicesLocation: 'com.google.android.gms:play-services-location:17.0.0',
+                material            : 'com.google.android.material:material:1.1.0',
+                roomRuntime         : 'androidx.room:room-runtime:2.2.5',
+                roomKtx             : "androidx.room:room-ktx:2.2.5",
+                navigationFragment  : 'androidx.navigation:navigation-fragment-ktx:2.3.0',
+                navigationUi        : 'androidx.navigation:navigation-ui-ktx:2.3.0'
+        ]
+
+        androidKaptLibs = [
+                roomCompiler: 'androidx.room:room-compiler:2.2.5'
+        ]
+
+        kotlinLibs = [
+                stdlib          : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+                coroutines      : 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3',
+                coroutinesCore  : 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.3'
+        ]
+
+        libs = [
+                okhttpLoginInterceptor: 'com.squareup.okhttp3:logging-interceptor:4.4.0',
+                okhttp                : 'com.squareup.okhttp3:okhttp:4.4.0',
+                retrofit              : 'com.squareup.retrofit2:retrofit:2.8.1',
+                retrofitGsonConverter : 'com.squareup.retrofit2:converter-gson:2.8.1',
+                koin                  : "org.koin:koin-android:2.1.5",
+                koinScope             : "org.koin:koin-android-scope:2.1.5",
+                koinViewModel         : "org.koin:koin-android-viewmodel:2.1.5",
+                timber                : 'com.jakewharton.timber:timber:4.7.1',
+                coil                  : 'io.coil-kt:coil:0.9.5',
+                legacy                : 'androidx.legacy:legacy-support-v4:1.0.0',
+                lifecycleExt          : 'androidx.lifecycle:lifecycle-extensions:2.1.0',
+                lifecycleViewModel    : 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0',
+                stetho                : 'com.facebook.stetho:stetho:1.5.1',
+                stethoOkhttp3         : 'com.facebook.stetho:stetho-okhttp3:1.5.1',
+                stethoOkhttp          : 'com.facebook.stetho:stetho-okhttp:1.5.1',
+                stethoUrl             : 'com.facebook.stetho:stetho-urlconnection:1.5.1'
+        ]
+
+        testLibs = [
+                junit        : 'junit:junit:4.12',
+                junitExt     : 'androidx.test.ext:junit:1.1.1',
+                mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0",
+                mockitoInline: "org.mockito:mockito-inline:2.28.2",
+                koinTest     : 'org.koin:koin-test:2.1.1',
+                coroutinesT  : "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.2"
+        ]
+
+        androidxTestLibs = [
+                archCoreTesting: 'androidx.arch.core:core-testing:2.1.0'
+        ]
+
+        androidTestLibs = [
+                testRunner   : 'androidx.test:runner:1.2.0',
+                espresso     : 'androidx.test.espresso:espresso-contrib:3.2.0',
+                espressoCore : 'androidx.test.espresso:espresso-core:3.1.0',
+                rules        : 'androidx.test:rules:1.2.0',
+                extJunit     : 'androidx.test.ext:junit-ktx:1.1.1',
+                koinTest     : 'org.koin:koin-test:2.1.1',
+                mockWebServer: 'com.squareup.okhttp3:mockwebserver:4.2.1',
+                okhttpIdling : 'com.jakewharton.espresso:okhttp3-idling-resource:1.0.0',
+                fragmentImpl : 'androidx.fragment:fragment-testing:1.2.4',
+                fragmentKtx  : 'androidx.fragment:fragment-ktx:1.1.0'
+        ]
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
